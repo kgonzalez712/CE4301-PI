@@ -20,8 +20,8 @@ El trabajo mostrado a continuación es la solución del **Proyecto Individual** 
 
 
 ## Ejecutar el proyecto 🏃🏻‍♀️
-1. Abrir la terminal 
+1. Desacargar el código del proyecto y abrir la terminal 
 2. Dirigirse a la carpeta del proyecto
 3. Para ejecutar el programa utilice el siguiente comando: `python3 run.py`
-4. Cierre la ventana de la imagen y luego en la terminal oprima **CTRL + Z**
+4. Una vez finalizado, cierre la ventana de la imagen y luego en la terminal oprima **CTRL + Z**
 5. Para visualizar los files generados utilice el siguiente comando: `python3 files.py`
