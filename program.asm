@@ -94,7 +94,7 @@ _next:
 
 _ignore:
     inc ebp
-    add esi,1
+    add esi,2
     jmp _mainLoop
 
 _incPointer:
@@ -111,11 +111,11 @@ _incAux:
     jmp _toRet
 
 _lastJob:    
-    mov r13d,100
-    mov r14d,80
+    mov r13d,103
+    mov r14d,83
     mov r15d,10
     call _breCirc
-    mov esi,95; x pointer
+    mov esi,98; x pointer
     mov edi,80; y pointer
     call _SHLU
     call _bres
@@ -127,7 +127,7 @@ _lastJob:
     call _bres
     call _HLG
     call _bres
-    mov esi,100; x pointer
+    mov esi,103; x pointer
     mov edi,80; y pointer
     call _HLU
     call _bres
@@ -477,6 +477,8 @@ _K:
     call _K2
     call _bres
     call _K3
+    call _bres
+    call _K4
     call _bres
 
     jmp _next

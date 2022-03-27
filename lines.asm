@@ -103,7 +103,7 @@ _K1:
     ret
 _K2:
     mov r8d,3 ; store x1
-    mov r9d,0; store y1
+    mov r9d,1; store y1
     mov r10d,3 ; store x2
     mov r11d,2; store y2
     call _ADDPTR
@@ -113,6 +113,14 @@ _K3:
     mov r9d,2 ; store y1
     mov r10d,4 ; store x2
     mov r11d,4; store y2
+    call _ADDPTR
+    ret
+
+_K4:
+    mov r8d,4 ; store x1
+    mov r9d,0; store y1
+    mov r10d,4 ; store x2
+    mov r11d,0; store y2
     call _ADDPTR
     ret
 
