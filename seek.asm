@@ -1,6 +1,6 @@
 
 section .data
-filename db 'output.bin',0h  ; the filename to create
+filename db 'output.txt',0h  ; the filename to create
 contents  db '0',   ; the contents to write at the start of the file
 
 section .text
@@ -28,5 +28,6 @@ _seek:
     ; close the file
     mov eax, 6
     mov ebx, 1
-        
+    int     80h
+    
     ret
