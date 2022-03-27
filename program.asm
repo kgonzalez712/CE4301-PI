@@ -113,8 +113,33 @@ _incAux:
 _lastJob:    
     mov r13d,100
     mov r14d,80
-    mov r15d,8
+    mov r15d,10
     call _breCirc
+    mov esi,95; x pointer
+    mov edi,80; y pointer
+    call _SHLU
+    call _bres
+    call _VLL
+    call _bres
+    call _HLD
+    call _bres
+    call _SVLR
+    call _bres
+    call _HLG
+    call _bres
+    mov esi,100; x pointer
+    mov edi,80; y pointer
+    call _HLU
+    call _bres
+    call _HLM
+    call _bres
+    call _HLD
+    call _bres
+    call _S1
+    call _bres
+    call _S2
+    call _bres
+
     jmp _quit
 
 ; ----------------------------------------------------------------------------------------

@@ -17,7 +17,7 @@ for line in file:
             #print(character)
 
 img = np.asmatrix(arr,dtype=np.uint8)
-print(img)
+#print(img)
 
 cv2.imshow("img",img)
 cv2.waitKey(0)
