@@ -31,7 +31,7 @@ _HLU:
 _HLD:
     mov r8d,0 ; store x1
     mov r9d,4;store y1
-    mov r10d,3 ; store x2
+    mov r10d,4 ; store x2
     mov r11d,4; store y2
     call _ADDPTR
     ret
