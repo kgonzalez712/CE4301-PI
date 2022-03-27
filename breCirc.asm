@@ -30,12 +30,12 @@ _while:
 
 _ifElse:
     cmp r10d,0
-    jge _if
+    jge _if2
     jmp _else
 _result:
     ret
 
-_if:
+_if2:
     dec r9d
     mov r11d,r8d
     add r10d,10
