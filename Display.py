@@ -3,8 +3,6 @@ import numpy as np
 from matplotlib import pyplot as plt
 import cv2
 
-
-rows, cols = (250, 250)
 file = open("output.txt", "r")
 
 arr=[]

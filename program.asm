@@ -26,6 +26,11 @@ _mainLoop:
     cmp ebp,LEN
     je _lastJob
     call _read
+    cmp r15d,1
+    je _EOF
+    cmp r8b,20h
+    je _check
+_EOF:
     cmp r8b,41h
     je _A
     cmp r8b,42h
@@ -80,12 +85,37 @@ _mainLoop:
     je _Z
     cmp r8b,2Ch
     je _COMA
-    cmp r8b,20h
-    je _ignore
     cmp r8b,0Ah
     je _ignore
     jmp _quit
 
+_check:
+    mov r11d, ebp ; char counter one ahead
+    add r11d,1
+    mov r10,6
+    jmp _Fits
+
+_Fits:
+    cmp r11d,500
+    je _specialCase
+    mov r9b, byte[r14d + r11d]
+    cmp r9b,20h ;r9b parses the characters
+    jne _fitAux
+    jmp _newLine
+     
+_fitAux:  
+    inc r11d
+    add r10,6
+    jmp _Fits
+
+_newLine:
+    mov r15d, esi
+    add r15d,r10d
+    cmp r15,250
+    jle _ignore
+    mov esi,0
+    add edi,6
+    jmp _ignore
 
 _next:
     inc ebp
@@ -104,6 +134,10 @@ _incPointer:
 _toRet:
     ret
     
+_specialCase:
+    mov r15d,1 
+    jmp _ignore
+
 
 _incAux:
     mov esi,0

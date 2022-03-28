@@ -18,7 +18,9 @@ _read:                  ;tell linker entry point
     mov     ebx, [fd_in]
     int     80h
 
+   mov r14, info
    mov r8b, byte[info + ebp]
+
    ret
 
 section	.data
