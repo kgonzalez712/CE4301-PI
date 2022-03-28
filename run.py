@@ -1,4 +1,5 @@
-import os
+import os #script to run the program
+
 #os.system("nasm -felf64 -o 1file.o 1file.asm")
 #os.system("ld -o 1file 1file.o")
 os.system("./1file")

@@ -16,11 +16,11 @@ _breCirc:
     mov r11d,0 ; free up r11
     mov r15d,0 ; free up r15, r14d and r13d
     call _calcCentr ;r15d now stores the center of the circle
-    call _drawPoints;aqui tengo que llamar a dibujar el circulo
+    call _drawPoints;called to draw the circle
 
     jmp _while
 
-_while:
+_while: ;getting the values of x and y
     cmp r9d,r8d
     jl _finish
     inc r8d
@@ -52,6 +52,7 @@ _else:
     add r10d,r11d
     jmp _result
 
+;get teh center of the circle
 _calcCentr:
     mov r15d,r14d
     imul r15d,250
@@ -60,6 +61,7 @@ _calcCentr:
     mov r14d,0 ;free up r14d
     ret
 
+;draw the points of the circle
 _drawPoints:
     call _pt1
     call _seek
@@ -127,7 +129,7 @@ _pt7:
     call _calcNewpoint
     ret
 _pt8:
-    mov r12d,r15d ;copiamos el valor del centro
+    mov r12d,r15d ;copy the centre
     mov r14d,r8d
     mov r13d,r9d
     imul r13d,-1

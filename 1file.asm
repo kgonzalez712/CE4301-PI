@@ -1,5 +1,5 @@
 END equ 250
-
+;THIS FILE creates a 250x250 file filled with 1s
 section	.text
    global _start         ;must be declared for using gcc
 

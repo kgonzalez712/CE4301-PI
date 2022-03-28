@@ -1,5 +1,5 @@
 section .text
-
+;vertical line right coordinates
 _VLR:
     mov r8d,4 ; store x1
     mov r9d,0 ; store y1
@@ -7,6 +7,8 @@ _VLR:
     mov r11d,4; store y2
     call _ADDPTR
     ret
+
+;vertical line left coordinates
 _VLL:
     mov r8d,0 ; store x1
     mov r9d,0 ;store y1
@@ -14,6 +16,7 @@ _VLL:
     mov r11d,4; store y2
     call _ADDPTR
     ret
+;vertical line middle coordinates
 _VLM:
     mov r8d,2 ; store x1
     mov r9d,0 ;store y1
@@ -21,6 +24,7 @@ _VLM:
     mov r11d,4; store y2
     call _ADDPTR
     ret
+;horizontal line up coordinates
 _HLU:
     mov r8d,0 ; store x1
     mov r9d,0 ;store y1
@@ -28,6 +32,7 @@ _HLU:
     mov r11d,0; store y2
     call _ADDPTR
     ret
+;horizontal line down coordinates
 _HLD:
     mov r8d,0 ; store x1
     mov r9d,4;store y1
@@ -35,6 +40,7 @@ _HLD:
     mov r11d,4; store y2
     call _ADDPTR
     ret
+;horizontal line midle coordinates
 _HLM:
     mov r8d,0 ; store x1
     mov r9d,2 ;store y1
@@ -42,6 +48,7 @@ _HLM:
     mov r11d,2; store y2
     call _ADDPTR
     ret
+;s stands for small
 _SHLU:
     mov r8d,0 ; store x1
     mov r9d,0 ;store y1
@@ -71,6 +78,7 @@ _SVLL:
     mov r11d,4; store y2
     call _ADDPTR
     ret
+;horizontal line for the letter G
 _HLG:
     mov r8d,1 ; store x1
     mov r9d,2 ;store y1
@@ -93,7 +101,7 @@ _SHLD:
     mov r11d,3; store y2
     call _ADDPTR
     ret
-
+;special case K
 _K1:
     mov r8d,0 ; store x1
     mov r9d,2 ; store y1
@@ -123,7 +131,7 @@ _K4:
     mov r11d,0; store y2
     call _ADDPTR
     ret
-
+;special case Q
 _Q1:
     mov r8d,0 ; store x1
     mov r9d,3;store y1
@@ -138,7 +146,7 @@ _Q2:
     mov r11d,3; store y2
     call _ADDPTR
     ret
-
+;special case S
 _S1:
     mov r8d,0 ; store x1
     mov r9d,0;store y1
@@ -154,7 +162,7 @@ _S2:
     mov r11d,4; store y2
     call _ADDPTR
     ret
-
+;special case V
 _V1:
     mov r8d,1 ; store x1
     mov r9d,4;store y1
@@ -169,6 +177,7 @@ _V2:
     mov r11d,3; store y2
     call _ADDPTR
     ret
+;special case X
 _X1:
     mov r8d,0 ; store x1
     mov r9d,0;store y1
@@ -205,6 +214,7 @@ _X5:
     call _ADDPTR
     ret
 
+;special case Y
 _Y1:
     mov r8d,2 ; store x1
     mov r9d,2;store y1
@@ -220,7 +230,7 @@ _Y2:
     call _ADDPTR
     ret
 
-
+;special case Z
 _Z1:
     mov r8d,4 ; store x1
     mov r9d,0;store y1
@@ -236,7 +246,7 @@ _Z2:
     mov r11d,4; store y2
     call _ADDPTR
     ret
-
+;;special case coma
 _LCOMA:
     mov r8d,0 ; store x1
     mov r9d,4;store y1
@@ -245,6 +255,7 @@ _LCOMA:
     call _ADDPTR
     ret
 
+;this adds the actual pointer values of the file to the default coordinates.
 _ADDPTR:
     add r8d,esi
     add r9d,edi

@@ -21,12 +21,13 @@ _start:
     mov ebp,0; character counter
     mov esi,0; x pointer
     mov edi,0; y pointer
-
+;main loop of the prgram
 _mainLoop:
+;checks the character
     cmp ebp,LEN
     je _lastJob
     call _read
-    cmp r15d,1
+    cmp r15d,1;if end of file ignore space chck
     je _EOF
     cmp r8b,20h
     je _check
@@ -94,7 +95,7 @@ _check:
     add r11d,1
     mov r10,6
     jmp _Fits
-
+;check if word fits in current line
 _Fits:
     cmp r11d,500
     je _specialCase
@@ -117,16 +118,17 @@ _newLine:
     add edi,6
     jmp _ignore
 
+;next pointer possition
 _next:
     inc ebp
     call _incPointer
     jmp _mainLoop
-
+;ignore spaces and line break
 _ignore:
     inc ebp
     add esi,2
     jmp _mainLoop
-
+;add to the pointer
 _incPointer:
     cmp esi,238
     jge _incAux
@@ -143,7 +145,7 @@ _incAux:
     mov esi,0
     add edi,7
     jmp _toRet
-
+;draws signute
 _lastJob:    
     mov r13d,103
     mov r14d,83
@@ -290,7 +292,7 @@ _calcCentr:
     mov r13d,0 ;free up r13d
     mov r14d,0 ;free up r14d
     ret
-
+;draw the points of the circle
 _drawPoints:
     call _pt1
     call _seek
